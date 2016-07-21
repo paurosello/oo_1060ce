@@ -7,5 +7,6 @@ RUN apt-get update && apt-get install -y --allow-unauthenticated \
   unzip \
   wget \
   bzip2
-RUN 	cd /root; ./community-installer-linux64.bin -s ./silent.properties
-CMD ["/usr/local/hp/oo/central/bin/central", "start"]
+
+RUN ./root/community-installer-linux64.bin -s /root/silent.properties
+CMD /usr/local/hp/oo/central/bin/central start && tail -f /dev/null
